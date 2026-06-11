@@ -810,11 +810,21 @@
   .hm-stat { flex: 1; min-width: 100px; padding: 16px 20px; }
   .hm-stat__number { font-size: 28px; }
 
-  .hm-work__header { flex-direction: column; gap: 16px; margin-bottom: 32px; }
+  .hm-work__header { flex-direction: column; gap: 12px; margin-bottom: 24px; }
   .hm-work__pill-text span:first-child { font-size: 12px; }
   .hm-work__pill-email { font-size: 12px; }
   .hm-work__pill-avatar { width: 32px; height: 32px; }
   .hm-work__pill { gap: 8px; padding: 5px 5px 5px 22px; }
+  .hm-work__list { gap: 24px; }
+  .hm-work__row { grid-template-columns: 1fr; }
+  .hm-work__row-body { padding: 24px; gap: 14px; }
+  .hm-work__row-tags { gap: 6px; }
+  .hm-work__row-tags span { font-size: 12px; padding: 4px 12px; }
+  .hm-work__row-bottom h3 { font-size: 28px; }
+  .hm-work__row-bottom { gap: 12px; }
+  .hm-work__row-body p { font-size: 14px; line-height: 1.6; }
+  .hm-work__row-cta { font-size: 13px; }
+  .hm-work__row-img { aspect-ratio: 16 / 9; }
 
   .hm-contact { padding: 0 0 64px; }
   .hm-contact__bento {
@@ -856,20 +866,14 @@
   .hm-stat__label { font-size: 11px; }
 
   .hm-work { padding: 40px 0; }
-  .hm-work__header { margin-bottom: 24px; gap: 12px; }
   .hm-work__pill { gap: 6px; padding: 4px 4px 4px 18px; }
   .hm-work__pill-text span:first-child { font-size: 11px; }
   .hm-work__pill-email { font-size: 11px; }
   .hm-work__pill-avatar { width: 28px; height: 28px; }
-  .hm-work__list { gap: 16px; }
   .hm-work__row { border-radius: 20px; }
   .hm-work__row-body { padding: 20px; gap: 12px; }
-  .hm-work__row-tags { gap: 6px; }
   .hm-work__row-tags span { font-size: 11px; padding: 4px 10px; }
   .hm-work__row-bottom h3 { font-size: 22px; }
-  .hm-work__row-bottom { gap: 10px; }
-  .hm-work__row-body p { font-size: 14px; line-height: 1.6; }
-  .hm-work__row-cta { font-size: 13px; }
 
   .hm-gallery { padding: 40px 0 0; }
   .hm-gallery__header { margin-bottom: 24px; }
