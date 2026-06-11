@@ -17,8 +17,6 @@
   --cs-container: 1440px;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-
 html { overflow-x: hidden; }
 
 body.cs-page {
@@ -435,6 +433,7 @@ body.cs-page {
 }
 
 .cs-process__card {
+  box-sizing: border-box;
   flex: 1;
   height: 400px;
   padding: 24px;
