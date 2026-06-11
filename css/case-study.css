@@ -17,6 +17,8 @@
   --cs-container: 1440px;
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+
 html { overflow-x: hidden; }
 
 body.cs-page {
@@ -25,6 +27,8 @@ body.cs-page {
   color: var(--cs-text);
   line-height: 1.6;
   padding-top: 72px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .cs-page .container {
