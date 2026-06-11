@@ -1,0 +1,199 @@
+/* ─── Haptics case study ─── */
+
+.hp-page {
+  --cs-bg: #F2F4F8;
+  --cs-text: #1A1C23;
+  --cs-text-muted: #6B7280;
+  --cs-border: #E0E3EB;
+  --cs-accent: #000000;
+  --cs-tag-bg: rgba(0, 0, 0, 0.08);
+  --cs-tag-text: #1A1C23;
+  --cs-card-bg: rgba(255, 255, 255, 0.8);
+  background: #F2F4F8;
+  color: #1A1C23;
+}
+
+.hp-page .cs-nav {
+  background: rgba(242, 244, 248, 0.9);
+  border: 1px solid #E0E3EB;
+  backdrop-filter: blur(12px);
+}
+
+.hp-page .cs-nav--sticky {
+  background: rgba(242, 244, 248, 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom-color: #D0D3DB;
+  box-shadow: none;
+}
+
+.hp-page .cs-nav__logo,
+.hp-page .cs-nav__links a {
+  color: #1A1C23;
+}
+
+.hp-page .cs-nav__links a:hover {
+  color: #000000;
+}
+
+.hp-page .cs-nav__cv {
+  border-color: rgba(0,0,0,0.25);
+  color: #1A1C23;
+}
+
+.hp-page .cs-nav__cv:hover {
+  background: #1A1C23;
+  color: #fff;
+  border-color: #1A1C23;
+}
+
+/* ─── Hero ─── */
+.hp-hero__bento {
+  background: linear-gradient(135deg, #E8ECF8 0%, #F2F4F8 100%) !important;
+  border: 1px solid #D0D3DB;
+}
+
+.hp-hero__bento .hm-hero__pill {
+  border-color: rgba(0, 0, 0, 0.25);
+  color: #1A1C23;
+}
+
+.hp-hero__bento .hm-hero__title {
+  color: #1A1C23;
+}
+
+.hp-hero__bento .hm-hero__desc {
+  color: #6B7280;
+}
+
+.hp-hero__bento .hm-btn--primary {
+  background: #1A1C23;
+  box-shadow: none;
+  outline: none;
+  color: #fff;
+}
+
+.hp-hero__bento .hm-btn--primary:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ─── iPod Visual ─── */
+.hp-hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.hp-ipod {
+  width: 220px;
+  height: auto;
+  filter: drop-shadow(0 16px 48px #C9D2E3) drop-shadow(0 4px 12px rgba(0,0,0,0.04));
+  animation: ipodFloat 4s ease-in-out infinite;
+}
+
+
+
+@keyframes ipodFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* iPod Click Zone */
+.hp-click-zone { cursor: pointer; pointer-events: all; }
+.hp-click-zone:active { opacity: 0.25; }
+
+/* Wheel click zone feedback */
+.hp-click-zone:active {
+  opacity: 0.3;
+}
+
+.hp-click-zone[data-action="play"]:active ~ .hp-ipod #hpBtnPlay,
+.hp-click-zone[data-action="prev"]:active ~ .hp-ipod #hpBtnPrev,
+.hp-click-zone[data-action="next"]:active ~ .hp-ipod #hpBtnNext {
+  fill: #666 !important;
+}
+
+.hp-page .cs-details {
+  border-top-color: #D0D3DB;
+  border-bottom-color: #D0D3DB;
+}
+
+.hp-page .cs-details__title {
+  color: #000;
+}
+
+.hp-page .cs-details__card {
+  background: rgba(255, 255, 255, 0.8);
+  outline: 1px solid #D0D3DB;
+}
+
+.hp-page .cs-details__col-label {
+  color: #6B7280;
+}
+
+.hp-page .cs-details__col-value {
+  color: #1A1C23;
+}
+
+.hp-page .cs-section__left h3 {
+  color: #1A1C23;
+}
+
+.hp-page .cs-section__number {
+  color: #000;
+  border-left-color: #000;
+}
+
+.hp-page .cs-section__right p {
+  color: #6B7280;
+}
+
+.hp-page .cs-process__card {
+  background: rgba(255, 255, 255, 0.8);
+  outline: 1px solid #D0D3DB;
+}
+
+.hp-page .cs-process__card:hover {
+  outline-color: #000000;
+}
+
+.hp-page .cs-process__badge {
+  background: #1A1C23;
+  color: #fff;
+}
+
+.hp-page .cs-process__body h3 {
+  color: #1A1C23;
+}
+
+.hp-page .cs-process__body p {
+  color: #6B7280;
+}
+
+.hp-page .cs-footer {
+  border-top-color: #D0D3DB;
+}
+
+.hp-page .cs-footer__brand,
+.hp-page .cs-footer__cta-label,
+.hp-page .cs-footer__email-text,
+.hp-page .cs-footer__socials a {
+  color: #1A1C23;
+}
+
+.hp-page .cs-footer__socials a:hover {
+  color: #000;
+}
+
+.hp-page .cs-footer__copy,
+.hp-page .cs-footer__quote {
+  color: #6B7280;
+}
+
+@media (max-width: 768px) {
+  .hp-ipod { width: 160px; }
+  .hp-hero__visual { min-height: 200px; }
+}

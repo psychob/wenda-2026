@@ -1,0 +1,221 @@
+/* ─── FIRST2 case study ─── */
+/* Overrides base case-study.css with FIRST2 brand colors */
+
+.f2-page {
+  --cs-bg: #0B0E11;
+  --cs-text: #ffffff;
+  --cs-text-muted: #9DA4B1;
+  --cs-border: #2F343D;
+  --cs-border-nav: rgba(73, 79, 92, 0.2);
+  --cs-tag-bg: rgba(238, 255, 47, 0.12);
+  --cs-tag-text: #EEFF2F;
+  --cs-accent: #EEFF2F;
+  --cs-card-bg: rgba(23, 27, 33, 0.80);
+  background: #0B0E11;
+  color: #ffffff;
+}
+
+.f2-page .cs-nav {
+  background: #0B0E11;
+  border: 1px solid rgba(73, 79, 92, 0.2);
+}
+
+.f2-page .cs-nav--sticky {
+  background: rgba(11, 14, 17, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid #494F5C;
+  box-shadow: none;
+}
+
+.f2-page .cs-nav__logo,
+.f2-page .cs-nav__links a {
+  color: #ffffff;
+}
+
+.f2-page .cs-nav__links a:hover {
+  color: #EEFF2F;
+}
+
+.f2-page .cs-nav__cv {
+  border-color: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.f2-page .cs-nav__cv:hover {
+  background: #EEFF2F;
+  color: #0B0E11;
+  border-color: #EEFF2F;
+}
+
+.f2-page .cs-nav--sticky {
+  background: rgba(11, 14, 17, 0.75);
+  backdrop-filter: blur(16px);
+  border-bottom-color: #494F5C;
+}
+
+/* ─── Hero Bento ─── */
+.f2-hero__bento {
+  background: url('../Figma/first2_hero1.png') center/cover no-repeat !important;
+  border: 1px solid #494F5C;
+}
+
+.f2-hero__bento .hm-hero__pill {
+  border-color: rgba(238, 255, 47, 0.35);
+  color: #EEFF2F;
+}
+
+.f2-hero__bento .hm-hero__title {
+  color: #ffffff;
+}
+
+.f2-hero__bento .hm-hero__desc {
+  color: #9DA4B1;
+}
+
+.f2-hero__bento .hm-btn--primary {
+  background:
+    radial-gradient(ellipse 45.58% 139.58% at 49.66% -0%, rgba(238, 255, 47, 0.20) 0%, rgba(238, 255, 47, 0) 100%),
+    radial-gradient(ellipse 50.51% 97.60% at 49.49% 105.82%, rgba(238, 255, 47, 0.20) 0%, rgba(238, 255, 47, 0.20) 90%);
+  box-shadow: inset 0 0 10px rgba(238, 255, 47, 0.12), 0px 0px 14.3px rgba(238, 255, 47, 0);
+  outline-color: rgba(238, 255, 47, 0.6);
+}
+
+.f2-hero__bento .hm-btn--primary:hover {
+  background:
+    radial-gradient(ellipse 45.58% 139.58% at 49.66% -0%, rgba(238, 255, 47, 0.45) 0%, rgba(238, 255, 47, 0) 100%),
+    radial-gradient(ellipse 50.51% 97.60% at 49.49% 105.82%, rgba(238, 255, 47, 0.45) 0%, rgba(238, 255, 47, 0.45) 90%);
+  box-shadow: inset 0 0 14px rgba(238, 255, 47, 0.6), 0px 0px 14.3px rgba(238, 255, 47, 0.18);
+  outline-color: rgba(238, 255, 47, 0.9);
+  color: #0B0E11;
+}
+
+.f2-hero__visual {
+  background: transparent;
+}
+
+.f2-hero__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.f2-page .cs-hero__image {
+  outline: 1px solid #2F343D;
+}
+
+.f2-page .cs-hero__tag {
+  background: rgba(238, 255, 47, 0.12);
+  color: #EEFF2F;
+}
+
+.f2-page .cs-hero__title {
+  color: #ffffff;
+}
+
+.f2-page .cs-hero__subtitle {
+  color: #9DA4B1;
+}
+
+.f2-page .cs-details {
+  border-top-color: #2F343D;
+  border-bottom-color: #2F343D;
+}
+
+.f2-page .cs-details__title {
+  color: #EEFF2F;
+}
+
+.f2-page .cs-details__card {
+  background: rgba(23, 27, 33, 0.80);
+  outline: 1px solid #2F343D;
+}
+
+.f2-page .cs-details__col-label {
+  color: #9DA4B1;
+}
+
+.f2-page .cs-details__col-value {
+  color: #ffffff;
+}
+
+.f2-page .cs-section__left h3 {
+  color: #ffffff;
+}
+
+.f2-page .cs-section__number {
+  color: #EEFF2F;
+  border-left-color: #EEFF2F;
+}
+
+.f2-page .cs-section__right p {
+  color: #9DA4B1;
+}
+
+.f2-page .cs-process__card {
+  background: rgba(23, 27, 33, 0.80);
+  outline: 1px solid #2F343D;
+}
+
+.f2-page .cs-process__card:hover {
+  outline-color: #EEFF2F;
+  box-shadow: 0 12px 32px rgba(238, 255, 47, 0.12);
+}
+
+.f2-page .cs-process__badge {
+  background: #EEFF2F;
+  color: #0B0E11;
+}
+
+.f2-page .cs-process__body h3 {
+  color: #ffffff;
+}
+
+.f2-page .cs-process__body p {
+  color: #9DA4B1;
+}
+
+.f2-page .cs-footer {
+  border-top-color: #2F343D;
+}
+
+.f2-page .cs-footer__brand,
+.f2-page .cs-footer__cta-label,
+.f2-page .cs-footer__email-text,
+.f2-page .cs-footer__socials a {
+  color: #ffffff;
+}
+
+.f2-page .cs-footer__socials a:hover {
+  color: #EEFF2F;
+}
+
+.f2-page .cs-footer__copy,
+.f2-page .cs-footer__quote {
+  color: #9DA4B1;
+}
+
+/* ─── ToC dark theme overrides ─── */
+.f2-page .toc-widget__toggle {
+  background: rgba(11, 14, 17, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+.f2-page .toc-widget__toggle:hover {
+  background: rgba(238, 255, 47, 0.1);
+}
+
+.f2-page .toc-widget__panel {
+  background: rgba(11, 14, 17, 0.92);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.f2-page .toc-widget__item:hover {
+  background: rgba(238, 255, 47, 0.08);
+  color: #ffffff;
+}
+
+.f2-page .toc-widget__item.is-active {
+  background: rgba(238, 255, 47, 0.12);
+}

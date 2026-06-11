@@ -1,0 +1,80 @@
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Split text reveal (hero) */
+.hm-hero__bento[data-reveal] {
+  transform: none;
+  transition: opacity 0.6s ease;
+  transition-delay: 0.1s;
+}
+.hm-hero__bento[data-reveal].revealed {
+  opacity: 1;
+}
+[data-split] .line {
+  display: inline-block;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transform: translateY(40px);
+  transition: clip-path 0.9s cubic-bezier(0.65, 0.05, 0, 1),
+              transform 0.9s cubic-bezier(0.65, 0.05, 0, 1);
+  will-change: clip-path, transform;
+  padding-top: 0.12em;
+  padding-bottom: 0.2em;
+  margin-top: -0.12em;
+  margin-bottom: -0.2em;
+}
+
+[data-split].revealed .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: translateY(0);
+}
+
+[data-split] .line:nth-child(1) { transition-delay: 0.1s; }
+[data-split] .line:nth-child(2) { transition-delay: 0.3s; }
+[data-split] .line:nth-child(3) { transition-delay: 0.5s; }
+[data-split] .line:nth-child(4) { transition-delay: 0.7s; }
+
+.hm-hero__desc[data-split] .line {
+  transition-duration: 0.7s;
+}
+.hm-hero__desc[data-split] .line:nth-child(1) { transition-delay: 0.6s; }
+.hm-hero__desc[data-split] .line:nth-child(2) { transition-delay: 0.8s; }
+.hm-hero__desc[data-split] .line:nth-child(3) { transition-delay: 1s; }
+
+.hm-hero__actions[data-split] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: 1.2s;
+}
+.hm-hero__actions[data-split].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal */
+.hm-work__row:nth-child(1) { transition-delay: 0s; }
+.hm-work__row:nth-child(2) { transition-delay: 0.15s; }
+.hm-work__row:nth-child(3) { transition-delay: 0.3s; }
+
+.hm-gallery__card:nth-child(1) { transition-delay: 0s; }
+.hm-gallery__card:nth-child(2) { transition-delay: 0.15s; }
+.hm-gallery__card:nth-child(3) { transition-delay: 0.3s; }
+
+/* Case study reveal */
+.cs-section[data-reveal],
+.cs-details[data-reveal],
+.cs-process[data-reveal],
+.cs-image-row[data-reveal],
+.cs-image-row-2[data-reveal],
+.cs-image-row-3[data-reveal] {
+  transition-delay: 0.1s;
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concepts & Art — Patryk Wenda</title>
+  <link rel="stylesheet" href="../css/case-study.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    .cn-hero {
+      padding: 40px 0 80px;
+    }
+    .cn-hero__bento {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #2a1a3e 100%);
+      border-radius: 28px;
+      padding: 80px;
+      min-height: 400px;
+      overflow: hidden;
+    }
+    .cn-hero__title {
+      font-family: 'Onest', sans-serif;
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: white;
+      margin: 0;
+    }
+    .cn-hero__desc {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+      max-width: 480px;
+      margin: 24px 0 0;
+    }
+
+    .cn-gallery {
+      padding: 40px 0 80px;
+    }
+    .cn-gallery .cs-section__left h3 {
+      font-size: 28px;
+    }
+
+    .cn-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+    .cn-grid--2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .cn-grid--3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .cn-grid__item {
+      border-radius: 21px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #f4f4f4;
+    }
+    .cn-grid__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .cn-grid__item:hover img {
+      transform: scale(1.03);
+    }
+    .cn-grid__item:hover {
+      transform: scale(1.02);
+    }
+    .cn-grid__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .cn-grid__item--tall {
+      grid-row: span 2;
+    }
+    .cn-grid__item--wide {
+      grid-column: span 2;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+    }
+    .lightbox__close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .lightbox__close:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .cn-hero__bento {
+        grid-template-columns: 1fr;
+        padding: 40px;
+      }
+      .cn-hero__title { font-size: 32px; }
+      .cn-grid { grid-template-columns: 1fr 1fr; }
+      .cn-grid--3 { grid-template-columns: 1fr 1fr; }
+      .cn-grid__item--tall { grid-row: auto; }
+    }
+    @media (max-width: 480px) {
+      .cn-hero__bento { padding: 24px; border-radius: 16px; }
+      .cn-hero__title { font-size: 26px; }
+      .cn-grid,
+      .cn-grid--2,
+      .cn-grid--3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="cs-page">
+
+  <nav class="cs-nav">
+    <div class="container">
+      <a href="../index.html" class="cs-nav__logo">
+        <span class="cs-nav__logo-icon">
+          <span class="gradient"></span>
+          <span class="dot"></span>
+        </span>
+        Patryk Wenda
+      </a>
+      <button class="cs-nav__toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="cs-nav__links">
+        <div class="cs-nav__links-inner">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#contact">Kontakt</a>
+          <a href="https://framerusercontent.com/assets/TnGNlhYU6wVWDDhgpsmIg30DjM.pdf" target="_blank" class="cs-nav__cv">Download my CV</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="cn-hero">
+    <div class="container">
+      <div class="cn-hero__bento" data-reveal>
+        <div>
+          <h1 class="cn-hero__title">Concepts, art,<br>and side explorations</h1>
+          <p class="cn-hero__desc">A collection of personal projects — game assets, illustrations, photography, and everything in between that doesn't fit in a case study.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cn-gallery">
+    <div class="container">
+      <div class="cs-section" data-reveal  style="padding-top:0">
+        <div class="cs-section__left">
+          <h3>Illustrations</h3>
+          <div class="cs-section__number">01</div>
+        </div>
+        <div class="cs-section__right">
+          <p>Digital illustrations and concept art created for personal projects and creative exploration.</p>
+        </div>
+      </div>
+      <div class="cn-grid" data-reveal>
+        <div class="cn-grid__item cn-grid__item--tall">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cn-gallery">
+    <div class="container">
+      <div class="cs-section" data-reveal id="s-02" style="padding-top:0">
+        <div class="cs-section__left">
+          <h3>Game Assets</h3>
+          <div class="cs-section__number">02</div>
+        </div>
+        <div class="cs-section__right">
+          <p>Game-ready assets, sprites, environment concepts, and props designed for various game projects.</p>
+        </div>
+      </div>
+      <div class="cn-grid cn-grid--3" data-reveal>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cn-gallery">
+    <div class="container">
+      <div class="cs-section" data-reveal id="s-03" style="padding-top:0">
+        <div class="cs-section__left">
+          <h3>Photography</h3>
+          <div class="cs-section__number">03</div>
+        </div>
+        <div class="cs-section__right">
+          <p>Selected photographs exploring composition, light, and perspective.</p>
+        </div>
+      </div>
+      <div class="cn-grid cn-grid--2" data-reveal>
+        <div class="cn-grid__item cn-grid__item--wide">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+        <div class="cn-grid__item">
+          <img src="../Figma/placeholder_casestudy1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cs-footer">
+    <div class="container">
+    <div class="cs-footer__top">
+      <div class="cs-footer__equalizer">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <span class="cs-footer__brand">Patryk Wenda</span>
+    </div>
+    <div class="cs-footer__middle">
+      <div class="cs-footer__cta">
+        <div class="cs-footer__cta-label">Let's talk more</div>
+        <div class="cs-footer__email">
+          <span class="cs-footer__email-bar"></span>
+          <span class="cs-footer__email-text">wendapatryk91@gmail.com</span>
+        </div>
+      </div>
+      <div class="cs-footer__socials">
+        <a href="https://www.linkedin.com/in/patrykwenda91/" target="_blank">Linkedin</a>
+        <a href="https://dribbble.com/Patryk_Wenda" target="_blank">Dribbble</a>
+      </div>
+    </div>
+    <div class="cs-footer__bottom">
+      <span class="cs-footer__copy">© 2026 Patryk Wenda. Vibecoded with ❤️</span>
+      <span class="cs-footer__quote">Imitation is the sincerest form of flattery</span>
+    </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightbox-close">✕</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
+
+
+  <script>
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    var nav = document.querySelector('.cs-nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 80) {
+        nav.classList.add('cs-nav--sticky');
+      } else {
+        nav.classList.remove('cs-nav--sticky');
+      }
+    });
+
+    document.querySelectorAll('.cs-nav__logo, .cs-nav__links a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        var isExternal = href.startsWith('http');
+        if (isExternal) return;
+        e.preventDefault();
+        var color = this.getAttribute('data-color') || '#ffffff';
+        var overlay = document.getElementById('page-transition') || (function() {
+          var el = document.createElement('div');
+          el.id = 'page-transition';
+          el.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;clip-path:circle(0% at var(--tx,50%) var(--ty,50%));transition:clip-path 0.6s cubic-bezier(0.65, 0.05, 0, 1)';
+          document.body.appendChild(el);
+          return el;
+        })();
+        var rect = this.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        overlay.style.background = color;
+        overlay.style.setProperty('--tx', cx + 'px');
+        overlay.style.setProperty('--ty', cy + 'px');
+        overlay.style.clipPath = 'circle(141% at ' + cx + 'px ' + cy + 'px)';
+        setTimeout(function() { window.location.href = href; }, 600);
+      });
+    });
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.cn-grid__item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        var img = this.querySelector('img');
+        if (img) {
+          lightboxImg.src = img.src;
+          lightbox.classList.add('open');
+        }
+      });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', function() {
+      lightbox.classList.remove('open');
+    });
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('open');
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('open');
+      }
+    });
+
+    // Nav border progress + back to top + radar pulse
+    var backBtn = document.getElementById('backToTop');
+    var navProgress = document.createElement('div');
+    navProgress.className = 'cs-nav__progress';
+    nav.appendChild(navProgress);
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      nav.style.setProperty('--progress', progress);
+      if (backBtn) {
+        backBtn.classList.toggle('visible', scrollTop > 300);
+        backBtn.classList.toggle('at-bottom', progress > 0.98);
+      }
+    });
+    if (backBtn) {
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+
+  </script>
+
+</body>
+</html>
