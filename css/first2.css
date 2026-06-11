@@ -43,7 +43,7 @@
 
 .f2-page .cs-nav__cv:hover {
   background: #EEFF2F;
-  color: #0B0E11;
+  color: #0B0E11 !important;
   border-color: #EEFF2F;
 }
 
@@ -199,6 +199,19 @@
 .f2-page .toc-widget__toggle {
   background: rgba(11, 14, 17, 0.85);
   backdrop-filter: blur(12px);
+}
+
+.f2-page .back-to-top {
+  background: rgba(11, 14, 17, 0.85);
+  backdrop-filter: blur(12px);
+  border-color: #2F343D;
+  color: #EEFF2F;
+}
+
+.f2-page .back-to-top.visible:hover {
+  background: #EEFF2F;
+  color: #0B0E11;
+  border-color: #EEFF2F;
 }
 
 .f2-page .toc-widget__toggle:hover {
