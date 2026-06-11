@@ -961,13 +961,13 @@ body.cs-page {
   pointer-events: auto;
 }
 
-.back-to-top.visible.at-bottom {
-  background: var(--cs-accent);
-  color: #fff;
+.cs-page .back-to-top.visible:hover {
+  background: color-mix(in srgb, var(--cs-accent) 8%, var(--cs-bg));
   border-color: var(--cs-accent);
+  color: var(--cs-accent);
 }
 
-.back-to-top.visible:hover {
+.cs-page .back-to-top.visible.at-bottom {
   background: var(--cs-accent);
   color: #fff;
   border-color: var(--cs-accent);
