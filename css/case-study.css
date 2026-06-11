@@ -909,15 +909,19 @@ body.cs-page {
 
 @media (max-width: 768px) {
   .toc-widget {
-    right: 12px;
+    right: 20px;
     top: auto;
     bottom: 68px;
     transform: none;
   }
+  .toc-widget__toggle {
+    width: 44px;
+    height: 44px;
+  }
   .toc-widget__panel {
     min-width: 170px;
     top: auto;
-    bottom: 48px;
+    bottom: 52px;
     transform: scale(0.92);
     transform-origin: bottom right;
   }
@@ -969,10 +973,10 @@ body.cs-page {
 
 @media (max-width: 768px) {
   .back-to-top {
-    bottom: 20px;
+    bottom: 16px;
     right: 20px;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 18px;
   }
 }
