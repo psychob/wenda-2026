@@ -419,6 +419,22 @@
   </nav>
 
   <script>
+  // Hamburger toggle
+  (function() {
+    var toggle = document.querySelector('.cs-nav__toggle');
+    var nav = document.querySelector('.cs-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('cs-nav--open');
+      });
+      document.addEventListener('click', function(e) {
+        if (nav.classList.contains('cs-nav--open') && !nav.contains(e.target)) {
+          nav.classList.remove('cs-nav--open');
+        }
+      });
+    }
+  })();
+
   // Scroll reveal
   var revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {

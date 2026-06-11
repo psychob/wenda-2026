@@ -159,7 +159,7 @@
   <!-- Single process card: Research -->
   <div class="container">
     <div class="cs-process" data-reveal style="border:none;padding:32px 0">
-      <div class="cs-process__card" style="min-width:auto">
+      <div class="cs-process__card">
         <span class="cs-process__badge">1</span>
         <div class="cs-process__body">
           <h3>Research</h3>
@@ -236,7 +236,7 @@
   <!-- Single process card: Define -->
   <div class="container">
     <div class="cs-process" data-reveal style="border:none;padding:32px 0">
-      <div class="cs-process__card" style="min-width:auto">
+      <div class="cs-process__card">
         <span class="cs-process__badge">2</span>
         <div class="cs-process__body">
           <h3>Define</h3>
@@ -310,7 +310,7 @@
   <!-- Single process card: Design -->
   <div class="container">
     <div class="cs-process" data-reveal style="border:none;padding:32px 0">
-      <div class="cs-process__card" style="min-width:auto">
+      <div class="cs-process__card">
         <span class="cs-process__badge">3</span>
         <div class="cs-process__body">
           <h3>Design</h3>
@@ -397,7 +397,7 @@
   <!-- Single process card: Iterate -->
   <div class="container">
     <div class="cs-process" data-reveal style="border:none;padding:32px 0">
-      <div class="cs-process__card" style="min-width:auto">
+      <div class="cs-process__card">
         <span class="cs-process__badge">4</span>
         <div class="cs-process__body">
           <h3>Iterate</h3>
@@ -560,6 +560,22 @@
   </nav>
 
   <script>
+  // Hamburger toggle
+  (function() {
+    var toggle = document.querySelector('.cs-nav__toggle');
+    var nav = document.querySelector('.cs-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', function() {
+        nav.classList.toggle('cs-nav--open');
+      });
+      document.addEventListener('click', function(e) {
+        if (nav.classList.contains('cs-nav--open') && !nav.contains(e.target)) {
+          nav.classList.remove('cs-nav--open');
+        }
+      });
+    }
+  })();
+
   // Scroll reveal (match home page's IntersectionObserver)
   var revealObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {

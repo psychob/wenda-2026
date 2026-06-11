@@ -17,6 +17,8 @@
   --cs-container: 1440px;
 }
 
+html { overflow-x: hidden; }
+
 body.cs-page {
   font-family: 'Spline Sans', sans-serif;
   background: var(--cs-bg);
@@ -684,7 +686,7 @@ body.cs-page {
   .cs-details { flex-direction: column; }
   .cs-details__card { flex-wrap: wrap; gap: 24px; }
   .cs-process { flex-wrap: wrap; border: none; gap: 16px; }
-  .cs-process__card { flex: 0 1 auto; width: fit-content; min-width: 220px; max-width: 300px; }
+  .cs-process__card { flex: 1 1 280px; min-width: 220px; }
   .cs-footer { padding: 24px 0; }
   .cs-footer__middle { flex-direction: column; align-items: flex-start; gap: 24px; }
   .cs-footer__bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -737,7 +739,7 @@ body.cs-page {
   .cs-section__number { font-size: 64px; line-height: 1; }
   .cs-details { padding: 32px 0; gap: 24px; }
   .cs-process { padding: 32px 0; gap: 16px; }
-  .cs-process__card { height: auto; min-height: 280px; }
+  .cs-process__card { flex: 1 1 calc(50% - 8px); min-width: 220px; height: 280px; }
   .cs-footer { padding: 16px 0; }
   .cs-footer__email-text { font-size: 22px; line-height: 28px; }
   .cs-page .container { padding: 0 24px; }
@@ -758,8 +760,8 @@ body.cs-page {
   .cs-details__title { font-size: 24px; line-height: 30px; margin-bottom: 12px; }
   .cs-details__card { flex-direction: column; gap: 16px; padding: 20px 16px; }
   .cs-details__col { gap: 12px; }
-  .cs-process { padding: 20px 0; gap: 12px; }
-  .cs-process__card { width: fit-content; min-width: 100%; height: auto; min-height: 160px; padding: 16px; }
+  .cs-process { padding: 20px 0; gap: 12px; flex-direction: column; }
+  .cs-process__card { width: 100%; min-width: 0; max-width: 100%; height: auto; min-height: 160px; padding: 16px; }
   .cs-process__body h3 { font-size: 24px; line-height: 30px; }
   .cs-process__body p { font-size: 14px; line-height: 20px; }
   .cs-image-row { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; margin: 16px 0; gap: 12px; touch-action: pan-x pan-y; }
