@@ -683,8 +683,8 @@ body.cs-page {
   .cs-image-row-3 { grid-template-columns: 1fr; }
   .cs-details { flex-direction: column; }
   .cs-details__card { flex-wrap: wrap; gap: 24px; }
-  .cs-process { flex-wrap: wrap; border: none; }
-  .cs-process__card { min-width: 280px; }
+  .cs-process { flex-wrap: wrap; border: none; gap: 16px; }
+  .cs-process__card { flex: 0 1 auto; width: fit-content; min-width: 220px; max-width: 300px; }
   .cs-footer { padding: 24px 0; }
   .cs-footer__middle { flex-direction: column; align-items: flex-start; gap: 24px; }
   .cs-footer__bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -759,11 +759,12 @@ body.cs-page {
   .cs-details__card { flex-direction: column; gap: 16px; padding: 20px 16px; }
   .cs-details__col { gap: 12px; }
   .cs-process { padding: 20px 0; gap: 12px; }
-  .cs-process__card { min-width: 100%; height: auto; min-height: 200px; padding: 20px; }
+  .cs-process__card { width: fit-content; min-width: 100%; height: auto; min-height: 160px; padding: 16px; }
   .cs-process__body h3 { font-size: 24px; line-height: 30px; }
   .cs-process__body p { font-size: 14px; line-height: 20px; }
-  .cs-image-row, .cs-image-row-2, .cs-image-row-3 { margin: 16px 0; gap: 12px; }
-  .cs-image-row-2, .cs-image-row-3 { grid-template-columns: 1fr; }
+  .cs-image-row { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; margin: 16px 0; gap: 12px; touch-action: pan-x pan-y; }
+  .cs-image-row__item { scroll-snap-align: start; flex-shrink: 0; }
+  .cs-image-row-2, .cs-image-row-3 { margin: 16px 0; gap: 12px; grid-template-columns: 1fr; }
   .cs-footer { padding: 12px 0; }
   .cs-footer__middle { gap: 16px; }
   .cs-footer__email-text { font-size: 18px; line-height: 24px; }
@@ -903,9 +904,19 @@ body.cs-page {
 @media (max-width: 768px) {
   .toc-widget {
     right: 12px;
+    top: auto;
+    bottom: 68px;
+    transform: none;
   }
   .toc-widget__panel {
     min-width: 170px;
+    top: auto;
+    bottom: 48px;
+    transform: scale(0.92);
+    transform-origin: bottom right;
+  }
+  .toc-widget__panel.is-open {
+    transform: scale(1);
   }
 }
 
