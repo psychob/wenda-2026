@@ -822,6 +822,12 @@ body.cs-page {
   transition: transform 0.3s ease;
 }
 
+.toc-widget__toggle.is-open {
+  background: var(--cs-accent);
+  border-color: var(--cs-accent);
+  color: #fff;
+}
+
 .toc-widget__toggle.is-open svg {
   transform: rotate(180deg);
 }
