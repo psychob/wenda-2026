@@ -38,7 +38,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
-  background: url('../Figma/placeholder_hero1.png') center/cover no-repeat;
+  background: url('../Figma/placeholder_hero1.webp') center/cover no-repeat;
   border-radius: 28px;
   padding: 80px 0 80px 80px;
   min-height: 500px;
@@ -765,7 +765,7 @@
     grid-template-columns: 1fr;
     padding: 0;
     min-height: auto;
-    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.5) 100%), url('../Figma/placeholder_hero1.png') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.5) 100%), url('../Figma/placeholder_hero1.webp') center/cover no-repeat;
   }
   .hm-hero__text { padding: 48px 48px 36px; gap: 24px; }
   .hm-hero__pills { gap: 12px; }
