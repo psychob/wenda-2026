@@ -208,7 +208,8 @@
   color: #EEFF2F;
 }
 
-.f2-page .back-to-top.visible:hover {
+.f2-page .back-to-top.visible:hover,
+.f2-page .back-to-top.visible.at-bottom {
   background: #EEFF2F;
   color: #0B0E11;
   border-color: #EEFF2F;
