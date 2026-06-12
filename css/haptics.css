@@ -49,9 +49,6 @@
   background: linear-gradient(90deg, #F2F4F8 0%, #E8ECF8 100%) !important;
   border: 1px solid #D0D3DB;
   position: relative;
-  padding: 80px !important;
-  grid-template-columns: 1fr auto !important;
-  gap: 80px;
 }
 
 .hp-hero__bento .hm-hero__text,
