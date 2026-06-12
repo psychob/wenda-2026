@@ -51,6 +51,12 @@
   position: relative;
 }
 
+.hp-hero__bento .hm-hero__text,
+.hp-hero__bento .hm-hero__visual {
+  position: relative;
+  z-index: 1;
+}
+
 .hp-hero__bento .hm-hero__pill {
   border-color: rgba(0, 0, 0, 0.25);
   color: #1A1C23;
@@ -94,7 +100,7 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: inherit;
 }
 
 .hp-tubes svg {
