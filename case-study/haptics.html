@@ -47,7 +47,12 @@
         <div class="hp-tubes" aria-hidden="true">
           <svg viewBox="0 0 1838 1895" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              </defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="white" stop-opacity="0.45"/>
+                <stop offset="40%" stop-color="white" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
 
             <!-- right tube from bottom up, turns completely right at iPod center -->
             <path class="hp-tube hp-tube--6" d="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
@@ -55,20 +60,20 @@
             <!-- 4: bottom horizontal -->
             <path class="hp-tube hp-tube--4" d="M-200,1641 H1800" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round"/>
 
-            <!-- 4 under 3 — TEST czerwone koło -->
-            <circle cx="1014" cy="1641" r="85" fill="red" opacity="0.8"/>
+            <!-- 4 under 3 -->
+            <circle cx="1014" cy="1641" r="85" fill="url(#glow)"/>
 
             <!-- 3: right L (over 4) -->
             <path class="hp-tube hp-tube--3" d="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <!-- 2 under 1 — TEST żółte koło -->
-            <circle cx="848" cy="628" r="85" fill="yellow" opacity="0.8"/>
+            <!-- 2 under 1 -->
+            <circle cx="848" cy="628" r="85" fill="url(#glow)"/>
 
             <!-- 2: left L (under 1) -->
             <path class="hp-tube hp-tube--2" d="M848,244 V736 C848,811 787,872 712,872 H-200" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <!-- 1 under 5 — TEST niebieskie koło -->
-            <circle cx="1208" cy="628" r="85" fill="blue" opacity="0.8"/>
+            <!-- 1 under 5 -->
+            <circle cx="1208" cy="628" r="85" fill="url(#glow)"/>
 
             <!-- 1: top L (over 2, under 5) -->
             <path class="hp-tube hp-tube--1" d="M585,-200 V492 C585,567 646,628 721,628 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
