@@ -50,33 +50,31 @@
               <filter id="hpTubeShadow" x="-50%" y="-50%" width="200%" height="200%">
                 <feDropShadow dx="4" dy="8" stdDeviation="10" flood-color="#A8B0C4" flood-opacity="0.3"/>
               </filter>
-              <linearGradient id="tgBack" x1="0" y1="1" x2="1" y2="0">
-                <stop offset="0%" stop-color="#F0F2F6"/>
-                <stop offset="100%" stop-color="#E0E3EC"/>
-              </linearGradient>
-              <linearGradient id="tgMid" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#EEF1F8"/>
-                <stop offset="100%" stop-color="#D0D5E4"/>
-              </linearGradient>
-              <linearGradient id="tgFront" x1="0" y1="0" x2="1" y2="0.3">
-                <stop offset="0%" stop-color="#EEF1F8"/>
-                <stop offset="100%" stop-color="#C5CCDC"/>
-              </linearGradient>
-              <linearGradient id="tgTop" x1="1" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#EEF1F8"/>
-                <stop offset="100%" stop-color="#BAC2D4"/>
-              </linearGradient>
             </defs>
-            <!-- bottom horizontal — backmost -->
-            <path class="hp-tube hp-tube--4" d="M-200,1641 H1800" stroke="url(#tgBack)" stroke-width="85" stroke-linecap="round" filter="url(#hpTubeShadow)"/>
-            <!-- right L going up — back -->
-            <path class="hp-tube hp-tube--3" d="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" stroke="url(#tgMid)" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
-            <!-- left L going down then left — mid -->
-            <path class="hp-tube hp-tube--2" d="M848,244 V736 C848,811 787,872 712,872 H-200" stroke="url(#tgFront)" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
-            <!-- top L — front -->
-            <path class="hp-tube hp-tube--1" d="M585,-200 V492 C585,567 646,628 721,628 H2000" stroke="url(#tgTop)" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
-            <!-- diagonal multi-bend — frontmost -->
-            <path class="hp-tube hp-tube--5" d="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" stroke="url(#tgTop)" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
+
+            <!-- 4: bottom horizontal — backmost -->
+            <path class="hp-tube hp-tube--4" d="M-200,1641 H1800" stroke="#CED3E2" stroke-width="85" stroke-linecap="round" filter="url(#hpTubeShadow)"/>
+
+            <!-- light patch: 4 under 3 at (1014, 1641) -->
+            <path d="M976,1641 H1052" stroke="#F2F4F8" stroke-width="85" stroke-linecap="round"/>
+
+            <!-- 3: right L going up -->
+            <path class="hp-tube hp-tube--3" d="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" stroke="#CED3E2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
+
+            <!-- light patch: 2 under 1 at (848, 628) -->
+            <path d="M848,590 V666" stroke="#F2F4F8" stroke-width="85" stroke-linecap="round"/>
+
+            <!-- 2: left L going down then left -->
+            <path class="hp-tube hp-tube--2" d="M848,244 V736 C848,811 787,872 712,872 H-200" stroke="#CED3E2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
+
+            <!-- light patch: 1 under 5 at (1208, 628) -->
+            <path d="M1170,628 H1246" stroke="#F2F4F8" stroke-width="85" stroke-linecap="round"/>
+
+            <!-- 1: top L -->
+            <path class="hp-tube hp-tube--1" d="M585,-200 V492 C585,567 646,628 721,628 H2000" stroke="#CED3E2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
+
+            <!-- 5: diagonal multi-bend — frontmost -->
+            <path class="hp-tube hp-tube--5" d="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" stroke="#CED3E2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round" filter="url(#hpTubeShadow)"/>
           </svg>
         </div>
 
