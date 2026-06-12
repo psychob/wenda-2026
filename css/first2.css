@@ -195,6 +195,49 @@
   color: #9DA4B1;
 }
 
+/* ─── Summary inline (5a, within grid) ─── */
+.f2-page .f2-summary-inline {
+  background: #EEFF2F;
+  border-radius: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 32px 0;
+}
+
+.f2-page .f2-summary-inline .cs-section__left h3,
+.f2-page .f2-summary-inline .cs-section__right p,
+.f2-page .f2-summary-inline .cs-section__right strong,
+.f2-page .f2-summary-inline .cs-section__right em {
+  color: #0B0E11;
+}
+
+.f2-page .f2-summary-inline .cs-section__number {
+  color: #0B0E11;
+  -webkit-text-stroke: 0;
+}
+
+/* ─── Summary bleed (5a, wider) ─── */
+.f2-page .f2-summary-bleed {
+  background: #EEFF2F;
+  border-radius: 24px;
+  margin-left: -30px;
+  margin-right: -30px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.f2-page .f2-summary-bleed .cs-section__left h3,
+.f2-page .f2-summary-bleed .cs-section__right p,
+.f2-page .f2-summary-bleed .cs-section__right strong,
+.f2-page .f2-summary-bleed .cs-section__right em {
+  color: #0B0E11;
+}
+
+.f2-page .f2-summary-bleed .cs-section__number {
+  color: #0B0E11;
+  -webkit-text-stroke: 0;
+}
+
 /* ─── ToC dark theme overrides ─── */
 .f2-page .toc-widget__toggle {
   background: rgba(11, 14, 17, 0.85);

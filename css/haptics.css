@@ -15,14 +15,12 @@
 
 .hp-page .cs-nav {
   background: rgba(242, 244, 248, 0.9);
-  border: 1px solid #E0E3EB;
   backdrop-filter: blur(12px);
 }
 
 .hp-page .cs-nav--sticky {
   background: rgba(242, 244, 248, 0.8);
   backdrop-filter: blur(16px);
-  border-bottom-color: #D0D3DB;
   box-shadow: none;
 }
 
@@ -171,21 +169,6 @@
 
 .hp-page .cs-process__body p {
   color: #6B7280;
-}
-
-.hp-page .cs-footer {
-  border-top-color: #D0D3DB;
-}
-
-.hp-page .cs-footer__brand,
-.hp-page .cs-footer__cta-label,
-.hp-page .cs-footer__email-text,
-.hp-page .cs-footer__socials a {
-  color: #1A1C23;
-}
-
-.hp-page .cs-footer__socials a:hover {
-  color: #000;
 }
 
 .hp-page .cs-footer__copy,
