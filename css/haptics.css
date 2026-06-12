@@ -177,7 +177,6 @@
   z-index: 1;
   width: 220px;
   height: auto;
-  filter: drop-shadow(0 16px 48px #C9D2E3) drop-shadow(0 4px 12px rgba(0,0,0,0.04));
   animation: ipodFloat 4s ease-in-out infinite;
 }
 
