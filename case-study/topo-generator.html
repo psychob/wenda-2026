@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Topo Generator</title>
+<style>
+body { background: #1a1a1a; color: #ccc; font-family: monospace; margin: 20px; }
+canvas { border: 1px solid #444; display: block; margin-bottom: 12px; }
+textarea { width: 100%; height: 300px; background: #111; color: #8f8; border: 1px solid #333; font-size: 11px; font-family: monospace; white-space: pre; }
+button { padding: 8px 20px; cursor: pointer; background: #2a2a2a; color: #fff; border: 1px solid #555; }
+label { display: inline-block; margin: 0 12px 6px 0; }
+input { width: 60px; background: #111; color: #fff; border: 1px solid #444; padding: 2px 6px; }
+</style>
+</head>
+<body>
+<h2>Topo Generator</h2>
+<div>
+  <label>Width <input id="w" type="number" value="1838"></label>
+  <label>Height <input id="h" type="number" value="1895"></label>
+  <label>Scale <input id="scale" type="number" value="300"></label>
+  <label>Levels <input id="levels" type="number" value="30"></label>
+  <label>Seed <input id="seed" type="number" value="42"></label>
+  <label>Center X <input id="cx" type="number" value="1400"></label>
+  <label>Center Y <input id="cy" type="number" value="920"></label>
+</div>
+<div>
+  <label><input id="animate" type="checkbox"> Animacja</label>
+  <label>Opacity min <input id="omin" type="number" step="0.01" value="0.04"></label>
+  <label>Opacity max <input id="omax" type="number" step="0.01" value="0.16"></label>
+</div>
+<p><button onclick="generate()">Generuj SVG</button> <button onclick="copySVG()">Kopiuj SVG</button></p>
+<canvas id="c"></canvas>
+<textarea id="out" readonly></textarea>
+
+<script>
+// ─── Perlin Noise (standard implementation) ───
+var perm = new Uint8Array(512);
+var grad3 = [[1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0],
+             [1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1],
+             [0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1]];
+
+function seedNoise(s) {
+  var p = new Uint8Array(256);
+  for (var i = 0; i < 256; i++) p[i] = i;
+  for (var i = 255; i > 0; i--) {
+    var j = Math.floor((s = (s * 16807 + 0) % 2147483647) / 2147483647 * (i + 1));
+    var t = p[i]; p[i] = p[j]; p[j] = t;
+  }
+  for (var i = 0; i < 512; i++) perm[i] = p[i & 255];
+}
+
+function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+function lerp(a, b, t) { return a + t * (b - a); }
+function dot3(g, x, y) { return g[0]*x + g[1]*y; }
+
+function noise2D(x, y) {
+  var X = Math.floor(x) & 255, Y = Math.floor(y) & 255;
+  var xf = x - Math.floor(x), yf = y - Math.floor(y);
+  var u = fade(xf), v = fade(yf);
+  var aa = perm[perm[X] + Y], ab = perm[perm[X] + Y + 1];
+  var ba = perm[perm[X + 1] + Y], bb = perm[perm[X + 1] + Y + 1];
+  return lerp(
+    lerp(dot3(grad3[aa % 12], xf, yf), dot3(grad3[ba % 12], xf - 1, yf), u),
+    lerp(dot3(grad3[ab % 12], xf, yf - 1), dot3(grad3[bb % 12], xf - 1, yf - 1), u),
+    v
+  );
+}
+
+// ─── Marching Squares ───
+function marchSquares(grid, w, h, level) {
+  var segments = [];
+  for (var y = 0; y < h - 1; y++) {
+    for (var x = 0; x < w - 1; x++) {
+      var tl = grid[y][x] >= level ? 1 : 0;
+      var tr = grid[y][x+1] >= level ? 1 : 0;
+      var br = grid[y+1][x+1] >= level ? 1 : 0;
+      var bl = grid[y+1][x] >= level ? 1 : 0;
+      var code = tl | (tr << 1) | (br << 2) | (bl << 3);
+      if (code === 0 || code === 15) continue;
+      // Edge intersections
+      var ix = function(a, b, ax, ay, bx, by) {
+        var va = grid[ay][ax] - level, vb = grid[by][bx] - level;
+        var t = va / (va - vb);
+        return [ax + (bx - ax) * t, ay + (by - ay) * t];
+      };
+      var pts = [];
+      // top edge
+      if ((code ^ (code >> 1)) & 1) pts.push(ix(x, x+1, x, y, x+1, y));
+      // right edge
+      if ((code ^ (code >> 2)) & 2) pts.push(ix(y, y+1, x+1, y, x+1, y+1));
+      // bottom edge
+      if ((code ^ (code >> 3)) & 4) pts.push(ix(x+1, x, x+1, y+1, x, y+1));
+      // left edge
+      if ((code ^ (code >> 0)) & 8) pts.push(ix(y+1, y, x, y+1, x, y));
+      if (pts.length >= 2) segments.push([pts[0], pts[1]]);
+    }
+  }
+  return segments;
+}
+
+// Connect segments into polylines
+function connectSegments(segs) {
+  if (!segs.length) return [];
+  var lines = [];
+  var used = new Array(segs.length).fill(false);
+  for (var i = 0; i < segs.length; i++) {
+    if (used[i]) continue;
+    var poly = [segs[i][0], segs[i][1]];
+    used[i] = true;
+    var changed = true;
+    while (changed) {
+      changed = false;
+      for (var j = 0; j < segs.length; j++) {
+        if (used[j]) continue;
+        var first = poly[0], last = poly[poly.length - 1];
+        var sa = segs[j][0], sb = segs[j][1];
+        var d1 = Math.hypot(last[0] - sa[0], last[1] - sa[1]);
+        var d2 = Math.hypot(last[0] - sb[0], last[1] - sb[1]);
+        var d3 = Math.hypot(first[0] - sa[0], first[1] - sa[1]);
+        var d4 = Math.hypot(first[0] - sb[0], first[1] - sb[1]);
+        var thresh = 2;
+        if (d1 < thresh) { poly.push(sb); used[j] = true; changed = true; }
+        else if (d2 < thresh) { poly.push(sa); used[j] = true; changed = true; }
+        else if (d3 < thresh) { poly.unshift(sb); used[j] = true; changed = true; }
+        else if (d4 < thresh) { poly.unshift(sa); used[j] = true; changed = true; }
+      }
+    }
+    lines.push(poly);
+  }
+  return lines;
+}
+
+function polyToPath(poly) {
+  if (poly.length < 2) return '';
+  var parts = ['M ' + poly[0][0].toFixed(1) + ' ' + poly[0][1].toFixed(1)];
+  for (var i = 1; i < poly.length; i++) {
+    parts.push('L ' + poly[i][0].toFixed(1) + ' ' + poly[i][1].toFixed(1));
+  }
+  return parts.join(' ');
+}
+
+// ─── Generate ───
+function generate() {
+  var W = +document.getElementById('w').value;
+  var H = +document.getElementById('h').value;
+  var SCALE = +document.getElementById('scale').value;
+  var NUM_LEVELS = +document.getElementById('levels').value;
+  var SEED = +document.getElementById('seed').value;
+  var CX = +document.getElementById('cx').value;
+  var CY = +document.getElementById('cy').value;
+  var ANIM = document.getElementById('animate').checked;
+  var OMIN = +document.getElementById('omin').value;
+  var OMAX = +document.getElementById('omax').value;
+
+  seedNoise(SEED);
+
+  // Generate noise grid
+  var step = 4;
+  var gw = Math.ceil(W / step), gh = Math.ceil(H / step);
+  var grid = [];
+  for (var y = 0; y < gh; y++) {
+    grid[y] = [];
+    for (var x = 0; x < gw; x++) {
+      var nx = x * step / SCALE, ny = y * step / SCALE;
+      var val = noise2D(nx, ny);
+      grid[y][x] = val;
+    }
+  }
+
+  // Draw preview
+  var canvas = document.getElementById('c');
+  canvas.width = gw;
+  canvas.height = gh;
+  var ctx = canvas.getContext('2d');
+  var img = ctx.createImageData(gw, gh);
+  for (var y = 0; y < gh; y++) {
+    for (var x = 0; x < gw; x++) {
+      var v = (grid[y][x] + 1) / 2 * 255;
+      var i = (y * gw + x) * 4;
+      img.data[i] = v; img.data[i+1] = v; img.data[i+2] = v; img.data[i+3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+
+  // Extract contours
+  var minV = Infinity, maxV = -Infinity;
+  for (var y = 0; y < gh; y++)
+    for (var x = 0; x < gw; x++) {
+      if (grid[y][x] < minV) minV = grid[y][x];
+      if (grid[y][x] > maxV) maxV = grid[y][x];
+    }
+
+  var bgRect = '<rect width="' + W + '" height="' + H + '" fill="#EEF0F5"/>';
+  var paths = [];
+
+  for (var i = 0; i < NUM_LEVELS; i++) {
+    var level = minV + (maxV - minV) * ((i + 0.5) / NUM_LEVELS);
+    var segs = marchSquares(grid, gw, gh, level);
+    var lines = connectSegments(segs);
+
+    var isMajor = (i % 5 === 0) || (i === 0) || (i === NUM_LEVELS - 1);
+    var sw = isMajor ? 1.5 : 0.7;
+    // Scale segments back to original coordinates
+    for (var li = 0; li < lines.length; li++) {
+      var poly = lines[li];
+      if (poly.length < 3) continue;
+      var scaled = poly.map(function(p) { return [p[0] * step, p[1] * step]; });
+      // Simplify: skip points that are too close
+      var simplified = [scaled[0]];
+      for (var k = 1; k < scaled.length; k++) {
+        var dx = scaled[k][0] - simplified[simplified.length-1][0];
+        var dy = scaled[k][1] - simplified[simplified.length-1][1];
+        if (Math.hypot(dx, dy) > 1.5) simplified.push(scaled[k]);
+      }
+      if (simplified.length < 3) continue;
+
+      var d = polyToPath(simplified);
+      if (ANIM) {
+        var delay = ((i / NUM_LEVELS) * 8).toFixed(2);
+        if (!paths[i]) paths[i] = [];
+        paths[i].push(d);
+      } else {
+        paths.push('<path class="topo-line" d="' + d + '" stroke-width="' + sw + '"/>');
+      }
+    }
+  }
+
+  // Build SVG output
+  var svg = '';
+  if (ANIM) {
+    svg += '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">\n';
+    svg += '  ' + bgRect + '\n';
+    for (var i = 0; i < paths.length; i++) {
+      if (!paths[i]) continue;
+      var delay = ((i / paths.length) * 8).toFixed(2);
+      var sw = (i % 5 === 0) ? 1.5 : 0.7;
+      for (var li = 0; li < paths[i].length; li++) {
+        svg += '  <g class="topo-group" style="animation-delay: ' + delay + 's">\n';
+        svg += '    <path class="topo-line" d="' + paths[i][li] + '" stroke-width="' + sw + '"/>\n';
+        svg += '  </g>\n';
+      }
+    }
+    svg += '</svg>';
+  } else {
+    svg += '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">\n';
+    svg += '  ' + bgRect + '\n';
+    for (var i = 0; i < paths.length; i++) {
+      svg += '  ' + paths[i] + '\n';
+    }
+    svg += '</svg>';
+  }
+
+  document.getElementById('out').value = svg;
+
+  // Generate CSS
+  if (ANIM) {
+    var css = '.topo-line { fill: none; stroke: #1A1C23; stroke-linecap: round; stroke-linejoin: round; }\n';
+    css += '.topo-group { transform-origin: ' + CX + 'px ' + CY + 'px; will-change: transform, opacity; ';
+    css += 'animation: topoPulse 8s ease-in-out infinite; }\n';
+    css += '@keyframes topoPulse {\n';
+    css += '  0%, 100% { transform: scale(0.97); opacity: ' + OMIN + '; }\n';
+    css += '  50% { transform: scale(1.02); opacity: ' + OMAX + '; }\n';
+    css += '}\n';
+    document.getElementById('out').value += '\n\n/* ─── CSS ─── */\n' + css;
+  }
+}
+
+function copySVG() {
+  var ta = document.getElementById('out');
+  ta.select();
+  document.execCommand('copy');
+}
+</script>
+</body>
+</html>
