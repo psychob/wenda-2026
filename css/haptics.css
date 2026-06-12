@@ -133,6 +133,9 @@
 .hp-tube--5 {
   animation: tubeDrift5 13s ease-in-out infinite;
 }
+.hp-tube--6 {
+  animation: tubeDrift6 14s ease-in-out infinite;
+}
 
 @keyframes tubeDrift1 {
   0%, 100% { transform: translateX(0) translateY(0); }
@@ -153,6 +156,10 @@
 @keyframes tubeDrift5 {
   0%, 100% { transform: translateX(0) translateY(0); }
   50% { transform: translateX(-4px) translateY(2px); }
+}
+@keyframes tubeDrift6 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(3px) translateY(-6px); }
 }
 
 .hp-ipod {
