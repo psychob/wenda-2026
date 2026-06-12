@@ -745,14 +745,16 @@
   font-weight: 500;
   color: var(--cs-text);
   text-decoration: none;
-  padding: 8px 0 4px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  padding: 12px 24px;
+  border: 1px solid var(--cs-border);
+  border-radius: 100px;
+  transition: all 0.2s ease;
 }
 
 .hm-contact__linkedin:hover {
-  color: var(--cs-accent);
-  border-bottom-color: var(--cs-accent);
+  background: var(--cs-text);
+  color: var(--cs-bg);
+  border-color: var(--cs-text);
 }
 
 .hm-contact__linkedin svg {
