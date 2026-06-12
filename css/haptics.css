@@ -119,61 +119,40 @@
 }
 
 .hp-tube--1 {
-  animation: tubeDrift1 8s ease-in-out infinite;
+  animation: tubeDrift1 10s ease-in-out infinite;
 }
 .hp-tube--2 {
-  animation: tubeDrift2 10s ease-in-out infinite;
+  animation: tubeDrift2 12s ease-in-out infinite;
 }
 .hp-tube--3 {
-  animation: tubeDrift3 12s ease-in-out infinite;
+  animation: tubeDrift3 9s ease-in-out infinite;
 }
 .hp-tube--4 {
-  animation: tubeDrift4 9s ease-in-out infinite;
+  animation: tubeDrift4 11s ease-in-out infinite;
 }
 .hp-tube--5 {
-  animation: tubeDrift5 11s ease-in-out infinite;
-}
-.hp-tube--6 {
-  animation: tubeDrift6 13s ease-in-out infinite;
-}
-.hp-tube--7 {
-  animation: tubeDrift7 7s ease-in-out infinite;
-}
-.hp-tube--8 {
-  animation: tubeDrift8 9.5s ease-in-out infinite;
+  animation: tubeDrift5 13s ease-in-out infinite;
 }
 
 @keyframes tubeDrift1 {
   0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-6px) translateY(4px); }
+  50% { transform: translateX(-5px) translateY(3px); }
 }
 @keyframes tubeDrift2 {
   0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(8px) translateY(-4px); }
+  50% { transform: translateX(4px) translateY(-5px); }
 }
 @keyframes tubeDrift3 {
   0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-4px) translateY(8px); }
+  50% { transform: translateX(-3px) translateY(6px); }
 }
 @keyframes tubeDrift4 {
   0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(6px) translateY(-6px); }
+  50% { transform: translateX(5px) translateY(-4px); }
 }
 @keyframes tubeDrift5 {
   0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-8px) translateY(2px); }
-}
-@keyframes tubeDrift6 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(4px) translateY(-6px); }
-}
-@keyframes tubeDrift7 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-6px) translateY(-4px); }
-}
-@keyframes tubeDrift8 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(5px) translateY(5px); }
+  50% { transform: translateX(-4px) translateY(2px); }
 }
 
 .hp-ipod {
@@ -272,8 +251,8 @@
   .hp-ipod { width: 160px; }
   .hp-hero__visual { min-height: 200px; }
   .hp-tubes { border-radius: 16px; }
-  .hp-tube { stroke-width: 16px !important; }
+  .hp-tube { stroke-width: 14px !important; }
 }
 @media (max-width: 480px) {
-  .hp-tube { stroke-width: 12px !important; }
+  .hp-tube { stroke-width: 10px !important; }
 }
