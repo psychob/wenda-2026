@@ -50,6 +50,7 @@
   border: 1px solid #D0D3DB;
   position: relative;
   padding: 80px !important;
+  grid-template-columns: minmax(0, 788px) 1fr !important;
 }
 
 .hp-hero__bento .hm-hero__text,
@@ -87,12 +88,11 @@
 .hp-hero__visual {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   background: transparent;
   overflow: visible;
   cursor: pointer;
   position: relative;
-  padding-right: 40px;
 }
 
 /* ─── Animated tubes ─── */
