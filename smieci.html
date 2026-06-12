@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Śmieci — Archive</title>
+  <style>
+    body { font-family: 'Courier New', monospace; background: #1a1a2e; color: #e0e0e0; padding: 40px; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+    h1 { color: #ff6b6b; font-size: 28px; }
+    h2 { color: #ffd93d; font-size: 20px; margin-top: 32px; }
+    pre { background: #16213e; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 13px; border-left: 3px solid #ff6b6b; }
+    code { font-size: 13px; }
+    hr { border: none; border-top: 1px solid #333; margin: 32px 0; }
+    .note { color: #888; font-style: italic; }
+    a { color: #4fc3f7; }
+    .file { color: #81c784; }
+  </style>
+</head>
+<body>
+
+<h1>🗑️ Śmieci — Archive 2026-06-12</h1>
+<p>Nieużywane kawałki kodu, stare wersje, backup reference. Do wywalenia ale trzymam na wszelki wypadek.</p>
+<hr>
+
+<h2>Backup</h2>
+<p>Pełna kopia portfolio: <code>C:\Users\p2trix\Desktop\Portfolio_12_06_2026\</code></p>
+<p>Tubes haptics backup: <code>$env:TEMP\haptics_tubes_backup.html</code> + <code>.css</code> — wersja z rurami z commita <code>d67be46</code></p>
+
+<h2>Nieużywane pliki</h2>
+<ul>
+  <li><span class="file">js/main.js</span> — starsza wersja app.js, 68 linii (scroll reveal + nav toggle)</li>
+  <li><span class="file">serve.ps1</span> — lokalny serwer dev</li>
+  <li><span class="file">*.bak</span> — kopie zapasowe plików HTML/CSS</li>
+</ul>
+
+<h2>Usunięte commity (git reflog)</h2>
+<ul>
+  <li><code>09be9d0</code> — haptics: replace pipes with topographic contour lines</li>
+  <li><code>7da1237</code> — revert: restore tubes + dots, remove topo contours</li>
+  <li><code>d67be46</code> — add topo generator tool</li>
+  <li><code>916e764</code> — Replace SVG tubes with canvas-driven topographic contour animation</li>
+</ul>
+
+<h2>Stary hero CSS (home.css przed zmianami 2026-06-12)</h2>
+<pre>/* Oryginalne warto¶ci przed prubami fixa */
+.hm-hero__bento {
+  align-items: start;  /* by³o start, próbowa³em stretch */
+}
+.hm-hero__text {
+  gap: 24px;  /* by³o, próbowa³em justify-content: space-between */
+}
+.hm-hero__actions {
+  margin-top: 8px;  /* by³o, próbowa³em margin-top: auto */
+}</pre>
+
+<h2>Kopia tubes SVG (FIRST2 kolory, z haptics)</h2>
+<p>Pełny SVG w <code>$env:TEMP\f2_tubes.svg</code> oraz <code>$env:TEMP\haptics_tubes_backup.html</code></p>
+<p>Oryginalny haptics tubes: viewBox 1838×1895, 6 rur, animateMotion dots, stroke #E4E7F2 (przekolorowane na #2F343D dla FIRST2)</p>
+
+<h2>Stary HTML hero — structure przed grupowaniem</h2>
+<pre>&lt;div class="hm-hero__text"&gt;
+  &lt;div class="hm-hero__pills"&gt;...&lt;/div&gt;
+  &lt;h1 class="hm-hero__title"&gt;...&lt;/h1&gt;          &lt;!-- osobno --&gt;
+  &lt;p class="hm-hero__desc"&gt;...&lt;/p&gt;              &lt;!-- osobno --&gt;
+  &lt;div class="hm-hero__actions"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+</body>
+</html>
