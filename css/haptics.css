@@ -122,6 +122,15 @@
 .hp-tube--5 {
   animation: tubeDrift5 11s ease-in-out infinite;
 }
+.hp-tube--6 {
+  animation: tubeDrift6 13s ease-in-out infinite;
+}
+.hp-tube--7 {
+  animation: tubeDrift7 7s ease-in-out infinite;
+}
+.hp-tube--8 {
+  animation: tubeDrift8 9.5s ease-in-out infinite;
+}
 
 @keyframes tubeDrift1 {
   0%, 100% { transform: translateX(0) translateY(0); }
@@ -142,6 +151,18 @@
 @keyframes tubeDrift5 {
   0%, 100% { transform: translateX(0) translateY(0); }
   50% { transform: translateX(-8px) translateY(2px); }
+}
+@keyframes tubeDrift6 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(4px) translateY(-6px); }
+}
+@keyframes tubeDrift7 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-6px) translateY(-4px); }
+}
+@keyframes tubeDrift8 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(5px) translateY(5px); }
 }
 
 .hp-ipod {
