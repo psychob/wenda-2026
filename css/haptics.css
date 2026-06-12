@@ -251,8 +251,4 @@
   .hp-ipod { width: 160px; }
   .hp-hero__visual { min-height: 200px; }
   .hp-tubes { border-radius: 16px; }
-  .hp-tube { stroke-width: 14px !important; }
-}
-@media (max-width: 480px) {
-  .hp-tube { stroke-width: 10px !important; }
 }
