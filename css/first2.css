@@ -157,6 +157,36 @@
   outline: 1px solid #2F343D;
 }
 
+.f2-define-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.f2-define-card .f2-tubes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.f2-define-card .f2-tubes svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.65);
+  transform-origin: right center;
+}
+
+.f2-define-card .cs-process__badge,
+.f2-define-card .cs-process__body {
+  position: relative;
+  z-index: 1;
+}
+
+
+
 .f2-page .cs-process__card:hover {
   outline-color: #EEFF2F;
   box-shadow: 0 12px 32px rgba(238, 255, 47, 0.12);
