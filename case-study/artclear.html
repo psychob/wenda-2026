@@ -7,6 +7,91 @@
   <link rel="stylesheet" href="../css/case-study.css">
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    /* ArtClear summary — solid blue */
+    .ac-summary {
+      background: #1C4EFE;
+      border-radius: 24px;
+      padding-left: 24px;
+      padding-right: 24px;
+      margin: 32px 0;
+    }
+    .ac-summary .cs-section__left h3,
+    .ac-summary .cs-section__right p {
+      color: #ffffff;
+    }
+    .ac-summary .cs-section__number {
+      color: #ffffff;
+      -webkit-text-stroke: 0;
+    }
+    /* Hero copy */
+    .ac-hero-copy {
+      text-align: center;
+      padding: 80px 24px;
+      margin: 0 0 24px;
+    }
+    .ac-hero-copy__stat {
+      font-size: 2rem;
+      line-height: 1.3;
+      color: #000000;
+      margin: 0 0 24px;
+    }
+    .ac-hero-copy__num {
+      color: #1C4EFE;
+      font-weight: 700;
+    }
+    .ac-hero-copy__quote {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: #666;
+      font-style: italic;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    /* Takeaways */
+    .ac-takeaways {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 0 0 48px;
+    }
+    .ac-takeaways__card {
+      background: #F6F8FF;
+      outline: 1px solid #E3E9FF;
+      border-radius: 20px;
+      padding: 28px 24px;
+      transition: outline-color 0.2s, box-shadow 0.2s;
+    }
+    .ac-takeaways__card:hover {
+      outline-color: #1C4EFE;
+      box-shadow: 0 12px 32px rgba(28, 78, 254, 0.12);
+    }
+    .ac-takeaways__icon {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1C4EFE;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .ac-takeaways__card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #666;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .ac-hero-copy__stat { font-size: 1.4rem; }
+      .ac-hero-copy__quote { font-size: 1.05rem; }
+      .ac-takeaways { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .ac-hero-copy { padding: 48px 16px; }
+      .ac-hero-copy__stat { font-size: 1.15rem; }
+      .ac-takeaways__card { padding: 20px 16px; }
+      .ac-takeaways__card p { font-size: 0.9rem; }
+    }
+  </style>
 </head>
 <body class="cs-page">
 
@@ -54,6 +139,18 @@
           <p class="hm-hero__desc">
             I was tasked with understanding the complexities of the art market and design the system for managing art collections for company who wanted to revolutionise the creative industry.
           </p>
+          <div class="hm-hero__actions">
+            <a href="#s-5a" class="hm-btn hm-btn--primary">Process &amp; takeaways <span class="btn__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span></a>
+            <a href="#contact" class="hm-btn hm-btn--outline">Let's talk <span class="btn__icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span></a>
+          </div>
         </div>
         <div class="hm-hero__visual">
           <img src="../Figma/placeholder_casestudy1.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
@@ -493,15 +590,45 @@
 
   <!-- Summary -->
   <div class="container">
-    <div class="cs-section" id="s-5a" data-reveal>
+    <div class="cs-section ac-summary" id="s-5a" data-toc-label="Check summary" data-reveal>
       <div class="cs-section__left">
-        <h3>Summary</h3>
+        <h3>Check summary</h3>
         <div class="cs-section__number">5a</div>
       </div>
       <div class="cs-section__right">
         <p>This project allowed me to explore both the design and potential future features for an artist community. By developing all stages of the app, which enables users to manage and create certificates for collectors and creators, I was able to consider how the app could grow and adapt to meet user needs.</p>
         <p>Looking ahead, this project also lays the foundation for exciting future possibilities, such as integrating a broader marketplace, fostering artist communities, and offering personalized user experiences.</p>
         <p>I'm excited to see how the design evolves and how this app can empower artists to share and sell their work in a simple, seamless way.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero copy: main statement -->
+  <div class="container">
+    <div class="ac-hero-copy" data-reveal>
+      <p class="ac-hero-copy__stat"><span class="ac-hero-copy__num">1 year</span> as the sole designer. <span class="ac-hero-copy__num">SaaS</span> for art management with blockchain security. Built with <span class="ac-hero-copy__num">HP Inc.</span> fingerprinting technology.</p>
+      <p class="ac-hero-copy__quote">From MVP demos for investors to complex edge cases — this project taught me how to design for a closed, niche market where trust is the product.</p>
+    </div>
+  </div>
+
+  <!-- Takeaways: 4 bento boxes -->
+  <div class="container">
+    <div class="ac-takeaways" data-reveal>
+      <div class="ac-takeaways__card">
+        <span class="ac-takeaways__icon">01</span>
+        <p>Art circles are insular — blockchain was never marketed as a feature, only the security it enabled.</p>
+      </div>
+      <div class="ac-takeaways__card">
+        <span class="ac-takeaways__icon">02</span>
+        <p>MVP was shaped by tech demos for investors, not user stories — speed to funding dictated the roadmap.</p>
+      </div>
+      <div class="ac-takeaways__card">
+        <span class="ac-takeaways__icon">03</span>
+        <p>Atomic design system + tokens kept a 6+ person dev team consistent under tight deadlines.</p>
+      </div>
+      <div class="ac-takeaways__card">
+        <span class="ac-takeaways__icon">04</span>
+        <p>Artwork isn't a flat image — multi-element tracking required close collaboration with devs on edge cases.</p>
       </div>
     </div>
   </div>
@@ -658,7 +785,7 @@
       var titleEl = sec.querySelector('h3');
       if (!numEl || !titleEl) return;
       var num = numEl.textContent.trim();
-      var label = titleEl.textContent.trim();
+      var label = sec.getAttribute('data-toc-label') || titleEl.textContent.trim();
       var li = document.createElement('li');
       li.className = 'toc-widget__item';
       li.setAttribute('data-index', i);

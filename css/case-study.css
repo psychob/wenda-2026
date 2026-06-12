@@ -42,7 +42,6 @@ body.cs-page {
   right: 0;
   z-index: 100;
   background: var(--cs-white);
-  border-bottom: 1px solid var(--cs-border-nav);
   padding: 24px 0;
   transition: background 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, border 0.3s ease;
 }
@@ -558,108 +557,11 @@ body.cs-page {
   padding: 48px 0;
 }
 
-.cs-footer__top {
+.cs-footer .container {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 0;
-  border-top: 1px solid var(--cs-border);
-}
-
-.cs-footer__equalizer {
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.cs-footer__equalizer span {
-  display: block;
-  width: 3.5px;
-  background: var(--cs-accent);
-  border-radius: 2px;
-}
-
-.cs-footer__equalizer span:nth-child(1) { height: 16.45px; }
-.cs-footer__equalizer span:nth-child(2) { height: 16.45px; }
-.cs-footer__equalizer span:nth-child(3) { height: 16.45px; }
-.cs-footer__equalizer span:nth-child(4) { height: 2.8px; }
-.cs-footer__equalizer span:nth-child(5) { height: 2.8px; }
-.cs-footer__equalizer span:nth-child(6) { height: 5.95px; }
-.cs-footer__equalizer span:nth-child(7) { height: 5.95px; }
-.cs-footer__equalizer span:nth-child(8) { height: 5.95px; }
-.cs-footer__equalizer span:nth-child(9) { height: 19.25px; }
-.cs-footer__equalizer span:nth-child(10) { height: 19.25px; }
-.cs-footer__equalizer span:nth-child(11) { height: 19.25px; }
-.cs-footer__equalizer span:nth-child(12) { width: 8.4px; height: 1.75px; }
-.cs-footer__equalizer span:nth-child(13) { width: 8.4px; height: 1.75px; }
-.cs-footer__equalizer span:nth-child(14) { width: 8.4px; height: 1.75px; }
-.cs-footer__equalizer span:nth-child(15) { width: 8.4px; height: 1.75px; }
-.cs-footer__equalizer span:nth-child(16) { width: 8.4px; height: 1.75px; }
-.cs-footer__equalizer span:nth-child(17) { width: 8.4px; height: 1.75px; }
-.cs-footer__equalizer span:nth-child(18) { width: 3.5px; height: 1.75px; }
-
-.cs-footer__brand {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.cs-footer__middle {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 24px 0;
-  border-top: 1px solid var(--cs-border);
-}
-
-.cs-footer__cta {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.cs-footer__cta-label {
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-}
-
-.cs-footer__email {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.cs-footer__email-bar {
-  width: 4px;
-  align-self: stretch;
-  background: var(--cs-border);
-  flex-shrink: 0;
-}
-
-.cs-footer__email-text {
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 33.6px;
-}
-
-.cs-footer__socials {
-  display: flex;
-  gap: 12px;
-}
-
-.cs-footer__socials a {
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--cs-text);
-  text-decoration: none;
-}
-
-.cs-footer__bottom {
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 24px 0;
-  border-top: 1px solid var(--cs-border);
 }
 
 .cs-footer__copy {
@@ -690,8 +592,7 @@ body.cs-page {
   .cs-process { flex-wrap: wrap; border: none; gap: 16px; }
   .cs-process__card { flex: 1 1 280px; min-width: 220px; }
   .cs-footer { padding: 24px 0; }
-  .cs-footer__middle { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .cs-footer__bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cs-footer .container { flex-direction: column; align-items: flex-start; gap: 4px; }
   .cs-page .container { padding: 0 40px; }
 }
 
@@ -743,7 +644,6 @@ body.cs-page {
   .cs-process { padding: 32px 0; gap: 16px; }
   .cs-process__card { flex: 1 1 calc(50% - 8px); min-width: 220px; height: 280px; }
   .cs-footer { padding: 16px 0; }
-  .cs-footer__email-text { font-size: 22px; line-height: 28px; }
   .cs-page .container { padding: 0 24px; }
 }
 
@@ -770,10 +670,7 @@ body.cs-page {
   .cs-image-row__item { scroll-snap-align: start; flex-shrink: 0; }
   .cs-image-row-2, .cs-image-row-3 { margin: 16px 0; gap: 12px; grid-template-columns: 1fr; }
   .cs-footer { padding: 12px 0; }
-  .cs-footer__middle { gap: 16px; }
-  .cs-footer__email-text { font-size: 18px; line-height: 24px; }
-  .cs-footer__socials { flex-wrap: wrap; gap: 8px; }
-  .cs-footer__bottom { gap: 4px; }
+  .cs-footer .container { flex-direction: column; align-items: flex-start; gap: 2px; }
   .cs-footer__copy, .cs-footer__quote { font-size: 11px; line-height: 18px; }
 }
 
