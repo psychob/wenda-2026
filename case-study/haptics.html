@@ -43,104 +43,9 @@
     <div class="container">
       <div class="hm-hero__bento hp-hero__bento" data-reveal>
 
-        <!-- Animated tubes background (full card) -->
-        <div class="hp-tubes" aria-hidden="true">
-          <svg viewBox="0 0 1838 1895" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="white" stop-opacity="0.45"/>
-                <stop offset="40%" stop-color="white" stop-opacity="0.25"/>
-                <stop offset="100%" stop-color="white" stop-opacity="0"/>
-              </radialGradient>
-              <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#EEF1F8" stop-opacity="1"/>
-                <stop offset="20%" stop-color="#EEF1F8" stop-opacity="0.8"/>
-                <stop offset="50%" stop-color="#EEF1F8" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#EEF1F8" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-
-            <!-- right tube from bottom up, turns completely right at iPod center -->
-            <path class="hp-tube hp-tube--6" d="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" dur="5s" repeatCount="indefinite" begin="0s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
-            </circle>
-
-            <!-- 4: bottom horizontal -->
-            <path class="hp-tube hp-tube--4" d="M-200,1641 H1800" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round"/>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M-200,1641 H1800" dur="4s" repeatCount="indefinite" begin="0s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M-200,1641 H1800" dur="4s" repeatCount="indefinite" begin="-1.33s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M-200,1641 H1800" dur="4s" repeatCount="indefinite" begin="-2.67s"/>
-            </circle>
-
-            <!-- 4 under 3 -->
-            <circle cx="1014" cy="1641" r="85" fill="url(#glow)"/>
-
-            <!-- 3: right L (over 4) -->
-            <path class="hp-tube hp-tube--3" d="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" dur="5s" repeatCount="indefinite" begin="0s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
-            </circle>
-
-            <!-- 2 under 1 -->
-            <circle cx="848" cy="628" r="85" fill="url(#glow)"/>
-
-            <!-- 2: left L (under 1) -->
-            <path class="hp-tube hp-tube--2" d="M848,244 V736 C848,811 787,872 712,872 H-200" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M848,244 V736 C848,811 787,872 712,872 H-200" dur="5s" repeatCount="indefinite" begin="0s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M848,244 V736 C848,811 787,872 712,872 H-200" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M848,244 V736 C848,811 787,872 712,872 H-200" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
-            </circle>
-
-            <!-- 1 under 5 -->
-            <circle cx="1208" cy="628" r="85" fill="url(#glow)"/>
-
-            <!-- 1: top L (over 2, under 5) -->
-            <path class="hp-tube hp-tube--1" d="M585,-200 V492 C585,567 646,628 721,628 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M585,-200 V492 C585,567 646,628 721,628 H2000" dur="5s" repeatCount="indefinite" begin="0s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M585,-200 V492 C585,567 646,628 721,628 H2000" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M585,-200 V492 C585,567 646,628 721,628 H2000" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
-            </circle>
-
-            <!-- 5: diagonal multi-bend (over 1) -->
-            <path class="hp-tube hp-tube--5" d="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" dur="7s" repeatCount="indefinite" begin="0s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" dur="7s" repeatCount="indefinite" begin="-2.33s"/>
-            </circle>
-            <circle r="80" fill="url(#dotGlow)">
-              <animateMotion path="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" dur="7s" repeatCount="indefinite" begin="-4.67s"/>
-            </circle>
-          </svg>
+        <!-- Animated topographic contour background (full card) -->
+        <div class="hp-topo" aria-hidden="true">
+          <canvas id="hpTopoCanvas"></canvas>
         </div>
 
         <div class="hm-hero__text">
@@ -734,6 +639,180 @@
         tocToggle.classList.remove('is-open');
       }
     });
+  })();
+
+  // ─── Topographic contours ───
+  (function() {
+    var canvas = document.getElementById('hpTopoCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+
+    var SEED = 42;
+    var SCALE = 240;       // noise scale in CSS px (bigger = wider hills)
+    var CELL = 12;         // marching squares cell size in CSS px
+    var NUM_LEVELS = 12;
+    var TIME_STEP = 0.0015;
+    var STROKE = '26, 28, 35'; // #1A1C23
+
+    // Perlin noise (same as topo-generator.html, extended to 3D for time morph)
+    var perm = new Uint8Array(512);
+    var grad3 = [[1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0],
+                 [1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1],
+                 [0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1]];
+
+    function seedNoise(s) {
+      var p = new Uint8Array(256);
+      for (var i = 0; i < 256; i++) p[i] = i;
+      for (var i = 255; i > 0; i--) {
+        var j = Math.floor((s = (s * 16807 + 0) % 2147483647) / 2147483647 * (i + 1));
+        var t = p[i]; p[i] = p[j]; p[j] = t;
+      }
+      for (var i = 0; i < 512; i++) perm[i] = p[i & 255];
+    }
+
+    function fade(t) { return t * t * t * (t * (t * 6 - 15) + 10); }
+    function lerp(a, b, t) { return a + t * (b - a); }
+    function dot3(g, x, y, z) { return g[0]*x + g[1]*y + g[2]*z; }
+
+    function noise3D(x, y, z) {
+      var X = Math.floor(x) & 255, Y = Math.floor(y) & 255, Z = Math.floor(z) & 255;
+      var xf = x - Math.floor(x), yf = y - Math.floor(y), zf = z - Math.floor(z);
+      var u = fade(xf), v = fade(yf), w = fade(zf);
+      var A = perm[X] + Y, AA = perm[A] + Z, AB = perm[A + 1] + Z;
+      var B = perm[X + 1] + Y, BA = perm[B] + Z, BB = perm[B + 1] + Z;
+      return lerp(
+        lerp(
+          lerp(dot3(grad3[perm[AA] % 12], xf, yf, zf), dot3(grad3[perm[BA] % 12], xf - 1, yf, zf), u),
+          lerp(dot3(grad3[perm[AB] % 12], xf, yf - 1, zf), dot3(grad3[perm[BB] % 12], xf - 1, yf - 1, zf), u),
+          v
+        ),
+        lerp(
+          lerp(dot3(grad3[perm[AA + 1] % 12], xf, yf, zf - 1), dot3(grad3[perm[BA + 1] % 12], xf - 1, yf, zf - 1), u),
+          lerp(dot3(grad3[perm[AB + 1] % 12], xf, yf - 1, zf - 1), dot3(grad3[perm[BB + 1] % 12], xf - 1, yf - 1, zf - 1), u),
+          v
+        ),
+        w
+      );
+    }
+
+    // Marching squares (as in topo-generator.html, with corrected edge-crossing tests)
+    function marchSquares(grid, w, h, level) {
+      var segments = [];
+      for (var y = 0; y < h - 1; y++) {
+        for (var x = 0; x < w - 1; x++) {
+          var tl = grid[y][x] >= level ? 1 : 0;
+          var tr = grid[y][x+1] >= level ? 1 : 0;
+          var br = grid[y+1][x+1] >= level ? 1 : 0;
+          var bl = grid[y+1][x] >= level ? 1 : 0;
+          var code = tl | (tr << 1) | (br << 2) | (bl << 3);
+          if (code === 0 || code === 15) continue;
+          // Edge intersections
+          var ix = function(ax, ay, bx, by) {
+            var va = grid[ay][ax] - level, vb = grid[by][bx] - level;
+            var t = va / (va - vb);
+            return [ax + (bx - ax) * t, ay + (by - ay) * t];
+          };
+          var pts = [];
+          if (tl !== tr) pts.push(ix(x, y, x+1, y));         // top edge
+          if (tr !== br) pts.push(ix(x+1, y, x+1, y+1));     // right edge
+          if (br !== bl) pts.push(ix(x+1, y+1, x, y+1));     // bottom edge
+          if (bl !== tl) pts.push(ix(x, y+1, x, y));         // left edge
+          if (pts.length >= 2) segments.push([pts[0], pts[1]]);
+          if (pts.length === 4) segments.push([pts[2], pts[3]]); // saddle case
+        }
+      }
+      return segments;
+    }
+
+    seedNoise(SEED);
+
+    var dpr = 1;
+    var cell = CELL;
+    var gw = 0, gh = 0;
+    var grid = [];
+    var time = 0;
+    var rafId = null;
+    var inView = true;
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function resize() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round(rect.height * dpr);
+      cell = CELL * dpr;
+      gw = Math.ceil(canvas.width / cell) + 2;
+      gh = Math.ceil(canvas.height / cell) + 2;
+      grid = [];
+      for (var y = 0; y < gh; y++) grid[y] = new Float32Array(gw);
+    }
+
+    function draw() {
+      if (!gw || !gh) return;
+      var noiseScale = SCALE * dpr / cell;
+      var minV = Infinity, maxV = -Infinity;
+      for (var y = 0; y < gh; y++) {
+        for (var x = 0; x < gw; x++) {
+          var val = noise3D(x / noiseScale, y / noiseScale, time);
+          grid[y][x] = val;
+          if (val < minV) minV = val;
+          if (val > maxV) maxV = val;
+        }
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      for (var i = 0; i < NUM_LEVELS; i++) {
+        var level = minV + (maxV - minV) * ((i + 0.5) / NUM_LEVELS);
+        var segs = marchSquares(grid, gw, gh, level);
+        var isMajor = i % 5 === 0;
+        ctx.strokeStyle = 'rgba(' + STROKE + ', ' + (isMajor ? 0.16 : 0.08) + ')';
+        ctx.lineWidth = (isMajor ? 1.6 : 1) * dpr;
+        ctx.beginPath();
+        for (var s = 0; s < segs.length; s++) {
+          ctx.moveTo(segs[s][0][0] * cell, segs[s][0][1] * cell);
+          ctx.lineTo(segs[s][1][0] * cell, segs[s][1][1] * cell);
+        }
+        ctx.stroke();
+      }
+    }
+
+    function tick() {
+      time += TIME_STEP;
+      draw();
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function start() {
+      if (rafId === null && !reducedMotion) rafId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    resize();
+    draw();
+
+    window.addEventListener('resize', function() {
+      resize();
+      if (reducedMotion || !inView) draw();
+    });
+
+    var topoObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        inView = entry.isIntersecting;
+        if (inView) start();
+        else stop();
+      });
+    }, { threshold: 0 });
+    topoObserver.observe(canvas.parentElement);
   })();
   </script>
 
