@@ -52,34 +52,94 @@
                 <stop offset="40%" stop-color="white" stop-opacity="0.25"/>
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </radialGradient>
+              <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#EEF1F8" stop-opacity="1"/>
+                <stop offset="20%" stop-color="#EEF1F8" stop-opacity="0.8"/>
+                <stop offset="50%" stop-color="#EEF1F8" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#EEF1F8" stop-opacity="0"/>
+              </radialGradient>
             </defs>
 
             <!-- right tube from bottom up, turns completely right at iPod center -->
             <path class="hp-tube hp-tube--6" d="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" dur="5s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1400,2000 V920 C1400,970 1500,950 1600,950 H2000" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
+            </circle>
 
             <!-- 4: bottom horizontal -->
             <path class="hp-tube hp-tube--4" d="M-200,1641 H1800" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round"/>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M-200,1641 H1800" dur="4s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M-200,1641 H1800" dur="4s" repeatCount="indefinite" begin="-1.33s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M-200,1641 H1800" dur="4s" repeatCount="indefinite" begin="-2.67s"/>
+            </circle>
 
             <!-- 4 under 3 -->
             <circle cx="1014" cy="1641" r="85" fill="url(#glow)"/>
 
             <!-- 3: right L (over 4) -->
             <path class="hp-tube hp-tube--3" d="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" dur="5s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1014,2000 V1403 C1014,1328 1075,1267 1150,1267 H2000" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
+            </circle>
 
             <!-- 2 under 1 -->
             <circle cx="848" cy="628" r="85" fill="url(#glow)"/>
 
             <!-- 2: left L (under 1) -->
             <path class="hp-tube hp-tube--2" d="M848,244 V736 C848,811 787,872 712,872 H-200" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M848,244 V736 C848,811 787,872 712,872 H-200" dur="5s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M848,244 V736 C848,811 787,872 712,872 H-200" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M848,244 V736 C848,811 787,872 712,872 H-200" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
+            </circle>
 
             <!-- 1 under 5 -->
             <circle cx="1208" cy="628" r="85" fill="url(#glow)"/>
 
             <!-- 1: top L (over 2, under 5) -->
             <path class="hp-tube hp-tube--1" d="M585,-200 V492 C585,567 646,628 721,628 H2000" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M585,-200 V492 C585,567 646,628 721,628 H2000" dur="5s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M585,-200 V492 C585,567 646,628 721,628 H2000" dur="5s" repeatCount="indefinite" begin="-1.67s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M585,-200 V492 C585,567 646,628 721,628 H2000" dur="5s" repeatCount="indefinite" begin="-3.33s"/>
+            </circle>
 
             <!-- 5: diagonal multi-bend (over 1) -->
             <path class="hp-tube hp-tube--5" d="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" stroke="#E4E7F2" stroke-width="85" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" dur="7s" repeatCount="indefinite" begin="0s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" dur="7s" repeatCount="indefinite" begin="-2.33s"/>
+            </circle>
+            <circle r="80" fill="url(#dotGlow)">
+              <animateMotion path="M1208,-200 V857 C1208,932 1147,993 1072,993 H884.819 C844.091,993 806.456,1015 786.092,1050 L660.41,1268 C640.046,1303 602.411,1325 561.683,1325 H-200" dur="7s" repeatCount="indefinite" begin="-4.67s"/>
+            </circle>
           </svg>
         </div>
 
