@@ -84,13 +84,17 @@
 
 /* ─── iPod Visual ─── */
 .hp-hero__visual {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: auto !important;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   overflow: visible;
   cursor: pointer;
-  position: relative;
 }
 
 /* ─── Animated tubes ─── */
