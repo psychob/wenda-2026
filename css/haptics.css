@@ -89,6 +89,7 @@
   right: auto !important;
   bottom: auto !important;
   width: auto !important;
+  align-self: stretch !important;
   display: flex;
   align-items: center;
   justify-content: center;
