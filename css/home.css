@@ -738,6 +738,7 @@
 
 .hm-contact__linkedin {
   display: inline-flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 8px;
   font-family: 'Onest', sans-serif;
