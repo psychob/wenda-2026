@@ -98,7 +98,7 @@
   cursor: pointer;
 }
 
-/* ─── Animated tubes ─── */
+/* ─── Topographic contour animation ─── */
 .hp-tubes {
   position: absolute;
   inset: 0;
@@ -114,52 +114,40 @@
   display: block;
 }
 
-.hp-tube {
-  will-change: transform;
+.topo-line {
+  fill: none;
+  stroke: #1A1C23;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.hp-tube--1 {
-  animation: tubeDrift1 10s ease-in-out infinite;
-}
-.hp-tube--2 {
-  animation: tubeDrift2 12s ease-in-out infinite;
-}
-.hp-tube--3 {
-  animation: tubeDrift3 9s ease-in-out infinite;
-}
-.hp-tube--4 {
-  animation: tubeDrift4 11s ease-in-out infinite;
-}
-.hp-tube--5 {
-  animation: tubeDrift5 13s ease-in-out infinite;
-}
-.hp-tube--6 {
-  animation: tubeDrift6 14s ease-in-out infinite;
+.topo-group {
+  will-change: transform, opacity;
 }
 
-@keyframes tubeDrift1 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-5px) translateY(3px); }
-}
-@keyframes tubeDrift2 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(4px) translateY(-5px); }
-}
-@keyframes tubeDrift3 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-3px) translateY(6px); }
-}
-@keyframes tubeDrift4 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(5px) translateY(-4px); }
-}
-@keyframes tubeDrift5 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-4px) translateY(2px); }
-}
-@keyframes tubeDrift6 {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(3px) translateY(-6px); }
+.topo-group--0  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 0s; }
+.topo-group--1  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 0.44s; }
+.topo-group--2  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 0.89s; }
+.topo-group--3  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 1.33s; }
+.topo-group--4  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 1.78s; }
+.topo-group--5  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 2.22s; }
+.topo-group--6  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 2.67s; }
+.topo-group--7  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 3.11s; }
+.topo-group--8  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 3.56s; }
+.topo-group--9  { animation: topoPulse 8s ease-in-out infinite; animation-delay: 4s; }
+.topo-group--10 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 4.44s; }
+.topo-group--11 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 4.89s; }
+.topo-group--12 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 5.33s; }
+.topo-group--13 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 5.78s; }
+.topo-group--14 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 6.22s; }
+.topo-group--15 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 6.67s; }
+.topo-group--16 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 7.11s; }
+.topo-group--17 { animation: topoPulse 8s ease-in-out infinite; animation-delay: 7.56s; }
+
+@keyframes topoPulse {
+  0%, 100% { transform: scale(0.97); opacity: 0.04; }
+  50% { transform: scale(1.02); opacity: 0.16; }
 }
 
 .hp-ipod {
