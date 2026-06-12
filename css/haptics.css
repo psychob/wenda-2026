@@ -46,8 +46,9 @@
 
 /* ─── Hero ─── */
 .hp-hero__bento {
-  background: linear-gradient(135deg, #E8ECF8 0%, #F2F4F8 100%) !important;
+  background: linear-gradient(90deg, #F2F4F8 0%, #E8ECF8 100%) !important;
   border: 1px solid #D0D3DB;
+  position: relative;
 }
 
 .hp-hero__bento .hm-hero__pill {
@@ -83,9 +84,69 @@
   background: transparent;
   overflow: visible;
   cursor: pointer;
+  position: relative;
+}
+
+/* ─── Animated tubes ─── */
+.hp-tubes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.hp-tubes svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hp-tube {
+  will-change: transform;
+}
+
+.hp-tube--1 {
+  animation: tubeDrift1 8s ease-in-out infinite;
+}
+.hp-tube--2 {
+  animation: tubeDrift2 10s ease-in-out infinite;
+}
+.hp-tube--3 {
+  animation: tubeDrift3 12s ease-in-out infinite;
+}
+.hp-tube--4 {
+  animation: tubeDrift4 9s ease-in-out infinite;
+}
+.hp-tube--5 {
+  animation: tubeDrift5 11s ease-in-out infinite;
+}
+
+@keyframes tubeDrift1 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-6px) translateY(4px); }
+}
+@keyframes tubeDrift2 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(8px) translateY(-4px); }
+}
+@keyframes tubeDrift3 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-4px) translateY(8px); }
+}
+@keyframes tubeDrift4 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(6px) translateY(-6px); }
+}
+@keyframes tubeDrift5 {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-8px) translateY(2px); }
 }
 
 .hp-ipod {
+  position: relative;
+  z-index: 1;
   width: 220px;
   height: auto;
   filter: drop-shadow(0 16px 48px #C9D2E3) drop-shadow(0 4px 12px rgba(0,0,0,0.04));
@@ -179,4 +240,9 @@
 @media (max-width: 768px) {
   .hp-ipod { width: 160px; }
   .hp-hero__visual { min-height: 200px; }
+  .hp-tubes { border-radius: 16px; }
+  .hp-tube { stroke-width: 16px !important; }
+}
+@media (max-width: 480px) {
+  .hp-tube { stroke-width: 12px !important; }
 }
