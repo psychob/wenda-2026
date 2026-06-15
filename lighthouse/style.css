@@ -198,6 +198,13 @@ html, body {
 }
 .pix-tool.is-off { opacity: 0.6; }
 
+/* Beam tool sits just below the Pixelate tool (shares .pix-tool styling) */
+.beam-tool { top: 150px; }
+.beam-tool .pix-tool__row { margin-top: 6px; }
+.bm-pos { flex: 1; color: #aeb6c2; font-size: 11px; }
+.pix-tool__btns { display: flex; gap: 6px; margin-top: 8px; }
+.pix-tool__btns .pix-tool__btn { flex: 1; }
+
 .pix-tool__head {
   display: flex;
   align-items: center;
@@ -215,6 +222,16 @@ html, body {
 .pix-tool__row input { flex: 1; accent-color: #6f8cff; }
 .pix-tool__row input:disabled { opacity: 0.4; }
 .pix-tool__row code { min-width: 34px; text-align: right; color: #8a93a3; }
+.pix-tool__row input[type="color"] {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid rgba(157, 164, 177, 0.3);
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
 
 .light-tool__int { grid-area: int; width: 100%; accent-color: #6f8cff; }
 .light-tool__intval { grid-area: val; color: #8a93a3; min-width: 34px; text-align: right; }
